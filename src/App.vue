@@ -1,47 +1,32 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Header from './components/Header.vue';
+import LinkCard from './components/LinkCard.vue';
+
+const myLinks = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jesuspallares/', icon: 'lucide:linkedin' },
+  { name: 'Github', url: 'https://www.github.com/jesuspallarees/', icon: 'lucide:github' },
+]
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="main-container">
+    <Header />
+    <LinkCard v-for="link in myLinks" :key="link.name" v-bind="link" />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 </style>
