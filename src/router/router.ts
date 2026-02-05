@@ -4,7 +4,7 @@ import Projects from '@/views/Projects.vue'
 
 const routes = [
     {
-        path: '/',
+        path: '/linktree',
         name: 'linktree',
         component: Linktree
     },
