@@ -3,10 +3,19 @@ import Background from './components/Background.vue';
 import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
 import LinkCard from './components/LinkCard.vue';
+import { Linkedin, Github } from 'lucide-vue-next';
 
 const myLinks = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jesuspallares/', icon: 'lucide:linkedin' },
-  { name: 'Github', url: 'https://www.github.com/jesuspallarees/', icon: 'lucide:github' },
+  { 
+    name: 'LinkedIn', 
+    url: 'https://www.linkedin.com/in/jesuspallares/', 
+    icon: Linkedin 
+  },
+  { 
+    name: 'Github', 
+    url: 'https://www.github.com/jesuspallarees/', 
+    icon: Github 
+  },
 ]
 </script>
 

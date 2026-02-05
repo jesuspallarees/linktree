@@ -1,19 +1,20 @@
-<script setup>
-import { Icon } from '@iconify/vue';
-const props = defineProps({ 
-  icon: { type: String, default: 'lucide:link' }, 
-  name: { type: String, default: 'Enlace' }, 
-  url: { type: String, default: '#' } 
-})
+<script setup lang="ts">
+interface Props {
+  name: string;
+  url: string;
+  icon: any; 
+}
+
+defineProps<Props>();
 </script>
 
 <template>
   <div class="card" data-aos="fade-up" data-aos-duration="1000">
     <a :href="url" class="link-card" target="_blank">
       <div class="icon-link-card">
-        <Icon :icon="icon" :ssr="true" width="22" height="22" class="shiny-effect" />
+        <component :is="icon" :size="22" :stroke-width="2" class="shiny-effect" />
       </div>
-      
+
       <div class="text-link-card">
         <h4 class="shiny-effect">{{ name }}</h4>
       </div>
@@ -40,10 +41,10 @@ const props = defineProps({
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
-  width: 320px; 
+  width: 320px;
   padding: 14px 20px;
   text-decoration: none;
-  color: #1d1d1f; 
+  color: #1d1d1f;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -52,6 +53,11 @@ const props = defineProps({
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
+}
+
+.icon-link-card :deep(svg) {
+  stroke: currentColor;
+  fill: none;
 }
 
 .text-link-card {
@@ -64,7 +70,7 @@ const props = defineProps({
   font-weight: 500;
   margin: 0;
   text-align: center;
-  color: inherit; 
+  color: inherit;
 }
 
 .spacer {
@@ -80,14 +86,12 @@ const props = defineProps({
 }
 
 .link-card:hover .shiny-effect {
-  background: linear-gradient(
-    to right, 
-    currentColor 0%, 
-    currentColor 40%, 
-    rgba(255, 255, 255, 0.9) 50%, 
-    currentColor 60%, 
-    currentColor 100%
-  );
+  background: linear-gradient(to right,
+      currentColor 0%,
+      currentColor 40%,
+      rgba(255, 255, 255, 0.9) 50%,
+      currentColor 60%,
+      currentColor 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -99,6 +103,7 @@ const props = defineProps({
   0% {
     background-position: 120% center;
   }
+
   100% {
     background-position: -120% center;
   }
@@ -107,7 +112,7 @@ const props = defineProps({
 .link-card:hover {
   background: rgba(255, 255, 255, 0.4);
   transform: translateY(-5px) scale(1.05);
-  color: #0071e3; 
+  color: #0071e3;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 

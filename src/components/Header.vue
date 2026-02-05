@@ -1,16 +1,16 @@
 <script setup>
-import { Icon } from '@iconify/vue';
+import { FileText } from 'lucide-vue-next';
 </script>
 
 <template>
   <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
     <div class="nav-content">
       <span class="logo">Jesús Pallarés</span>
-      
+
       <div class="nav-actions">
         <a href="../../public/assets/pallaresdiaz_jesus_cv_en.pdf" target="_blank" class="cv-button">
           <span>CV</span>
-          <Icon icon="lucide:file-text" width="16" height="16" />
+          <FileText :size="15" />
         </a>
       </div>
     </div>
@@ -24,10 +24,10 @@ import { Icon } from '@iconify/vue';
   left: 0;
   width: 100%;
   height: 60px;
-  z-index: 1000; 
-  background: rgba(255, 255, 255, 0.15); 
-  backdrop-filter: blur(10px) saturate(180%); 
-  -webkit-backdrop-filter: blur(10px) saturate(180%); 
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@ import { Icon } from '@iconify/vue';
 
 .nav-content {
   width: 100%;
-  max-width: 800px; 
+  max-width: 800px;
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
@@ -52,8 +52,8 @@ import { Icon } from '@iconify/vue';
 }
 
 .cv-button {
-  position: relative; 
-  overflow: hidden;   
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -71,15 +71,13 @@ import { Icon } from '@iconify/vue';
   content: '';
   position: absolute;
   top: 0;
-  left: -100%; 
+  left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.4), 
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
   transition: none;
 }
 
@@ -91,8 +89,8 @@ import { Icon } from '@iconify/vue';
 }
 
 .cv-button:hover::after {
-  left: 100%; 
-  transition: all 0.6s ease; 
+  left: 100%;
+  transition: all 0.6s ease;
 }
 
 .cv-button:active {
@@ -100,7 +98,12 @@ import { Icon } from '@iconify/vue';
 }
 
 @media (max-width: 480px) {
-  .cv-button span { display: none; }
-  .cv-button { padding: 8px 12px; }
+  .cv-button span {
+    display: none;
+  }
+
+  .cv-button {
+    padding: 8px 12px;
+  }
 }
 </style>
