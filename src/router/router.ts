@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Linktree from '@/views/Linktree.vue'
-import Projects from '@/views/Projects.vue'
+import Linktree from '../views/Linktree.vue'
+import Projects from '../views/Projects.vue'
 
 const routes = [
     {
