@@ -6,8 +6,12 @@ const props = defineProps({icon: String, name: String, url: String})
 <template>
     <div class="card">
         <a :href="url" class="link-card">
-            <Icon :icon="icon" :ssr="true"/>
-            <span>{{ name }}</span>
+            <div class="icon-link-card">
+                <Icon :icon="icon" :ssr="true"/>
+            </div>
+            <div class="text-link-card">
+                <h4>{{ name }}</h4>
+            </div>
         </a>
     </div>
 </template>
@@ -25,17 +29,22 @@ const props = defineProps({icon: String, name: String, url: String})
     align-items: center;
     padding: 10px;
     min-width: 300px;
+    text-align: center;
+    text-align: center;
 }
 
 .link-card {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    padding: 15px 20px;
     border: 1px solid black;
     border-radius: 8px;
     width: 100%;
+    padding: 10px 10px;
 }
+
+.icon-link-card {
+    width: 50%;
+}
+
 </style>

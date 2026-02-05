@@ -9,6 +9,18 @@
   min-width: 100%;    
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.normal-text {
+  font-weight: 400;
+}
+
+h1, .bold-text {
+  font-weight: 600;
+}
+
 a,
 .green {
   text-decoration: none;

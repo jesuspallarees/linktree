@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Header from './components/Header.vue';
+import Hero from './components/Hero.vue';
 import LinkCard from './components/LinkCard.vue';
 
 const myLinks = [
@@ -10,7 +10,7 @@ const myLinks = [
 
 <template>
   <div class="main-container">
-    <Header />
+    <Hero />
     <LinkCard v-for="link in myLinks" :key="link.name" v-bind="link" />
   </div>
 </template>

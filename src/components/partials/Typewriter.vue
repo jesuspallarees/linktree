@@ -54,7 +54,6 @@ onMounted(() => {
 
 <style scoped>
     .typewriter {
-        font-family: monospace;
         font-size: 1.5rem;
     }
 
