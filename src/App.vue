@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Hero from '../components/Hero.vue';
-import LinkCard from '../components/LinkCard.vue';
 import { Linkedin, Github } from 'lucide-vue-next';
+import Hero from './components/Hero.vue';
+import LinkCard from './components/LinkCard.vue';
 
 const myLinks = [
     {
