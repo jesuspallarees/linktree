@@ -12,7 +12,8 @@ const myPhrases = [
 
 <template>
     <section class="hero">
-        <img id="avatar" src="../assets/mi-foto-original.jpeg" alt="my avatar" data-aos="fade-down" data-aos-duration="1000">
+        <img id="avatar" src="../assets/mi-foto-original.jpeg" alt="my avatar" data-aos="fade-down"
+            data-aos-duration="1000">
         <div data-aos="fade-down" data-aos-duration="1000">
             <Typewriter :phrases="myPhrases" />
             <p>Software developer based on Huelva, Spain</p>
@@ -50,7 +51,7 @@ const myPhrases = [
 p {
     font-size: 1.1rem;
     font-weight: 400;
-    color: #86868b;
+    color: #464649;
     letter-spacing: -0.01em;
 }
 
@@ -59,5 +60,16 @@ p {
     font-weight: 600;
     letter-spacing: -0.02em;
     margin: 0;
+}
+
+@media (max-width: 480px) {
+    #avatar {
+        width: 170px;
+        height: 170px;
+    }
+
+    .typewriter {
+        font-size: 10px;
+    }
 }
 </style>
