@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { Linkedin, Github } from 'lucide-vue-next';
+import Background from './components/Background.vue';
+import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
 import LinkCard from './components/LinkCard.vue';
 
@@ -18,6 +20,8 @@ const myLinks = [
 </script>
 
 <template>
+    <Header />
+    <Background />
     <div class="main-container">
         <Hero />
         <LinkCard v-for="link in myLinks" :key="link.name" v-bind="link" />
