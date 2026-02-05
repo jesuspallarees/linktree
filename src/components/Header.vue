@@ -8,7 +8,7 @@ import { FileText } from 'lucide-vue-next';
       <span class="logo">Jesús Pallarés</span>
 
       <div class="nav-actions">
-        <a href="../../public/assets/pallaresdiaz_jesus_cv_en.pdf" target="_blank" class="cv-button">
+        <a href="./curriculum.pdf" target="_blank" class="cv-button">
           <span>CV</span>
           <FileText :size="15" />
         </a>
