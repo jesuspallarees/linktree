@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LinkTree from '@/views/Linktree.vue'
+import Linktree from '@/views/Linktree.vue'
 import Projects from '@/views/Projects.vue'
 
 const routes = [
     {
         path: '/',
         name: 'linktree',
-        component: LinkTree
+        component: Linktree
     },
     {
         path: '/projects',
