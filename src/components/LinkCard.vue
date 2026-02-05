@@ -12,11 +12,14 @@ defineProps<Props>();
   <div class="card" data-aos="fade-up" data-aos-duration="1000">
     <a :href="url" class="link-card" target="_blank">
       <div class="icon-link-card">
-        <component :is="icon" :size="22" :stroke-width="2" class="shiny-effect" />
+        <component :is="icon" :size="22" :stroke-width="2" />
       </div>
 
       <div class="text-link-card">
-        <h4 class="shiny-effect">{{ name }}</h4>
+        <div class="text-wrapper">
+          <h4>{{ name }}</h4>
+          <div class="underline"></div>
+        </div>
       </div>
 
       <div class="spacer"></div>
@@ -46,6 +49,7 @@ defineProps<Props>();
   text-decoration: none;
   color: #1d1d1f;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative; 
 }
 
 .icon-link-card {
@@ -55,14 +59,14 @@ defineProps<Props>();
   transition: transform 0.3s ease;
 }
 
-.icon-link-card :deep(svg) {
-  stroke: currentColor;
-  fill: none;
-}
-
 .text-link-card {
   display: flex;
   justify-content: center;
+}
+
+.text-wrapper {
+  position: relative;
+  display: inline-block;
 }
 
 .text-link-card h4 {
@@ -71,53 +75,39 @@ defineProps<Props>();
   margin: 0;
   text-align: center;
   color: inherit;
+  padding-bottom: 2px;
 }
 
-.spacer {
-  width: 40px;
-}
-
-.shiny-effect {
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
-  display: inline-block;
-}
-
-.link-card:hover .shiny-effect {
-  background: linear-gradient(to right,
-      currentColor 0%,
-      currentColor 40%,
-      rgba(255, 255, 255, 0.9) 50%,
-      currentColor 60%,
-      currentColor 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 1.2s linear forwards;
-}
-
-@keyframes shine {
-  0% {
-    background-position: 120% center;
-  }
-
-  100% {
-    background-position: -120% center;
-  }
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #0071e3;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .link-card:hover {
   background: rgba(255, 255, 255, 0.4);
-  transform: translateY(-5px) scale(1.05);
+  transform: translateY(-5px) scale(1.02);
   color: #0071e3;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.link-card:hover .underline {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .link-card:hover .icon-link-card {
-  transform: scale(1.15);
+  transform: scale(1.1);
+}
+
+.spacer {
+  width: 40px;
 }
 
 @media (max-width: 360px) {

@@ -5,17 +5,10 @@ import { FileText } from 'lucide-vue-next';
 <template>
   <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
     <div class="nav-content">
-      <router-link to="/" class="logo">
-        <span>Jesús Pallarés</span>
+        <span class="logo">Jesús Pallarés</span>
         <div class="underline"></div>
-      </router-link>
 
       <div class="nav-actions">
-        <router-link to="/projects" class="nav-link">
-          <span>Projects</span>
-          <div class="underline"></div>
-        </router-link>
-
         <a href="./curriculum.pdf" target="_blank" class="cv-button">
           <div class="cv-content">
             <span>CV</span>
@@ -109,6 +102,7 @@ import { FileText } from 'lucide-vue-next';
 .cv-button:hover .underline {
   transform: scaleX(1);
   transform-origin: left;
+  color: #0071e3;
 }
 
 .logo:hover,
@@ -121,6 +115,7 @@ import { FileText } from 'lucide-vue-next';
 .cv-button:hover .cv-content {
   transform: translateY(-1px);
   transition: transform 0.2s ease;
+  color: #0071e3;
 }
 
 @media (max-width: 480px) {
