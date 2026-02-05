@@ -18,7 +18,7 @@ const type = () => {
     if (isDeleting.value) {
         displayText.value = fullText.substring(0, charIndex - 1);
         charIndex--;
-    // Writing logic
+        // Writing logic
     } else {
         displayText.value = fullText.substring(0, charIndex + 1);
         charIndex++;
@@ -29,13 +29,13 @@ const type = () => {
     // If not deleting, and the word is completed, reverse the logic
     if (!isDeleting.value && charIndex === fullText.length) {
         isDeleting.value = true;
-        typeSpeed = 2000; 
+        typeSpeed = 2000;
     }
     // Opposite from above
     else if (isDeleting.value && charIndex === 0) {
         isDeleting.value = false;
-        phraseIndex = (phraseIndex + 1) % props.phrases.length; 
-        typeSpeed = 500; 
+        phraseIndex = (phraseIndex + 1) % props.phrases.length;
+        typeSpeed = 500;
     }
 
     setTimeout(type, typeSpeed);
@@ -49,19 +49,32 @@ onMounted(() => {
 </script>
 
 <template>
-    <h1 class="typewriter">{{ displayText }} <span class="cursor">|</span></h1>
+    <div class="typewriter-container">
+        <h1 class="typewriter">{{ displayText }}<span class="cursor">|</span></h1>
+    </div>
 </template>
 
 <style scoped>
-    .typewriter {
-        font-size: 1.5rem;
-    }
+.typewriter {
+    font-family: JetBrains Mono;
+    font-size: 1.5rem;
+    min-height: 2rem;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
 
-    .cursor {
-        animation: blink 1s infinite;
-    }
+.cursor {
+    color: #0071e3;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
 
-    @keyframes blink {
-        50% {opacity: 0;}
+@keyframes blink {
+    50% {
+        opacity: 0;
     }
+}
 </style>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Background from './components/Background.vue';
+import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
 import LinkCard from './components/LinkCard.vue';
 
@@ -9,6 +11,8 @@ const myLinks = [
 </script>
 
 <template>
+  <Header/>
+  <Background/>
   <div class="main-container">
     <Hero />
     <LinkCard v-for="link in myLinks" :key="link.name" v-bind="link" />
@@ -16,17 +20,16 @@ const myLinks = [
 </template>
 
 <style scoped>
-.header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh; 
+  transition: background-color 0.5s ease; 
+}
+
+:global(html.dark) .main-container {
+  background-color: #000000;
 }
 </style>
